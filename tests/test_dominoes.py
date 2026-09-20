@@ -448,7 +448,7 @@ def test_computer_play_on_empty_board_no_indexerror(
     # Isolate the first-play placement from post-play scheduling/turn logic.
     monkeypatch.setattr(_main_module, "_after_play", lambda *_a, **_k: None)
 
-    _main_module._computer_play()  # must not raise
+    _main_module._computer_play()  # noqa: SLF001 -- must not raise
 
     assert not pd.is_empty()
-    assert _main_module._hand1 == []
+    assert _main_module._hand1 == []  # noqa: SLF001
