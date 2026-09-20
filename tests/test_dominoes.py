@@ -446,7 +446,7 @@ def test_computer_play_on_empty_board_no_indexerror(
     monkeypatch.setattr(_main_module, "_played_dominoes", pd)
     monkeypatch.setattr(_main_module, "_hand1", [[3, 4]])
     # Isolate the first-play placement from post-play scheduling/turn logic.
-    monkeypatch.setattr(_main_module, "_after_play", lambda *a, **k: None)
+    monkeypatch.setattr(_main_module, "_after_play", lambda *_a, **_k: None)
 
     _main_module._computer_play()  # must not raise
 
